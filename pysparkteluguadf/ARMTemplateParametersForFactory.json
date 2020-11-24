@@ -1,0 +1,45 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "pysparkteluguadf"
+		},
+		"ADLS_GEN1_LS_servicePrincipalKey": {
+			"value": ""
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"BLOB_STORAGE_GEN2_LS_connectionString": {
+			"value": ""
+		},
+		"linkedService1_connectionString": {
+			"value": ""
+		},
+		"Azure_Sql_Database_LS_connectionString": {
+			"value": ""
+		},
+		"ADLS_GEN1_LS_properties_typeProperties_dataLakeStoreUri": {
+			"value": "https://pysparkteluguadls.azuredatalakestore.net/webhdfs/v1"
+		},
+		"ADLS_GEN1_LS_properties_typeProperties_servicePrincipalId": {
+			"value": "727e75cd-cee7-4ecd-a39c-5702c63209d5"
+		},
+		"ADLS_GEN1_LS_properties_typeProperties_tenant": {
+			"value": "d14bffed-15fe-4426-adc3-19d215af763b"
+		},
+		"ADLS_GEN1_LS_properties_typeProperties_subscriptionId": {
+			"value": "74123a04-32df-4350-bed5-d8d0526526f9"
+		},
+		"ADLS_GEN1_LS_properties_typeProperties_resourceGroupName": {
+			"value": "eswar_rg"
+		},
+		"REST_API_LS_properties_typeProperties_url": {
+			"value": "https://api.data.gov.sg/v1/environment/24-hour-weather-forecast?"
+		},
+		"RestService_GET_API_LS_properties_typeProperties_url": {
+			"value": "https://api.data.gov.sg/v1/environment/24-hour-weather-forecast"
+		}
+	}
+}

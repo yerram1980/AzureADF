@@ -1,0 +1,146 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "pysparkteluguadf"
+		},
+		"ADLS_GEN1_LS_servicePrincipalKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'servicePrincipalKey' of 'ADLS_GEN1_LS'"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
+		},
+		"BLOB_STORAGE_GEN2_LS_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'BLOB_STORAGE_GEN2_LS'"
+		},
+		"linkedService1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'linkedService1'"
+		},
+		"Azure_Sql_Database_LS_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Azure_Sql_Database_LS'"
+		},
+		"ADLS_GEN1_LS_properties_typeProperties_dataLakeStoreUri": {
+			"type": "string",
+			"defaultValue": "https://pysparkteluguadls.azuredatalakestore.net/webhdfs/v1"
+		},
+		"ADLS_GEN1_LS_properties_typeProperties_servicePrincipalId": {
+			"type": "string",
+			"defaultValue": "727e75cd-cee7-4ecd-a39c-5702c63209d5"
+		},
+		"ADLS_GEN1_LS_properties_typeProperties_tenant": {
+			"type": "string",
+			"defaultValue": "d14bffed-15fe-4426-adc3-19d215af763b"
+		},
+		"ADLS_GEN1_LS_properties_typeProperties_subscriptionId": {
+			"type": "string",
+			"defaultValue": "74123a04-32df-4350-bed5-d8d0526526f9"
+		},
+		"ADLS_GEN1_LS_properties_typeProperties_resourceGroupName": {
+			"type": "string",
+			"defaultValue": "eswar_rg"
+		},
+		"REST_API_LS_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://api.data.gov.sg/v1/environment/24-hour-weather-forecast?"
+		},
+		"RestService_GET_API_LS_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://api.data.gov.sg/v1/environment/24-hour-weather-forecast"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "pysparkteluguadf_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"ADLS_GEN1_LS_servicePrincipalKey": {
+						"value": "[parameters('ADLS_GEN1_LS_servicePrincipalKey')]"
+					},
+					"AzureBlobStorage1_connectionString": {
+						"value": "[parameters('AzureBlobStorage1_connectionString')]"
+					},
+					"BLOB_STORAGE_GEN2_LS_connectionString": {
+						"value": "[parameters('BLOB_STORAGE_GEN2_LS_connectionString')]"
+					},
+					"linkedService1_connectionString": {
+						"value": "[parameters('linkedService1_connectionString')]"
+					},
+					"Azure_Sql_Database_LS_connectionString": {
+						"value": "[parameters('Azure_Sql_Database_LS_connectionString')]"
+					},
+					"ADLS_GEN1_LS_properties_typeProperties_dataLakeStoreUri": {
+						"value": "[parameters('ADLS_GEN1_LS_properties_typeProperties_dataLakeStoreUri')]"
+					},
+					"ADLS_GEN1_LS_properties_typeProperties_servicePrincipalId": {
+						"value": "[parameters('ADLS_GEN1_LS_properties_typeProperties_servicePrincipalId')]"
+					},
+					"ADLS_GEN1_LS_properties_typeProperties_tenant": {
+						"value": "[parameters('ADLS_GEN1_LS_properties_typeProperties_tenant')]"
+					},
+					"ADLS_GEN1_LS_properties_typeProperties_subscriptionId": {
+						"value": "[parameters('ADLS_GEN1_LS_properties_typeProperties_subscriptionId')]"
+					},
+					"ADLS_GEN1_LS_properties_typeProperties_resourceGroupName": {
+						"value": "[parameters('ADLS_GEN1_LS_properties_typeProperties_resourceGroupName')]"
+					},
+					"REST_API_LS_properties_typeProperties_url": {
+						"value": "[parameters('REST_API_LS_properties_typeProperties_url')]"
+					},
+					"RestService_GET_API_LS_properties_typeProperties_url": {
+						"value": "[parameters('RestService_GET_API_LS_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "pysparkteluguadf_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'pysparkteluguadf_ArmTemplate_0')]"
+			]
+		}
+	]
+}
