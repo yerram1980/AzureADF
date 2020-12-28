@@ -178,6 +178,12 @@
 					"referenceName": "AzureDatabricks_LS",
 					"type": "LinkedServiceReference"
 				}
+			},
+			{
+				"name": "If Condition1",
+				"type": "IfCondition",
+				"dependsOn": [],
+				"userProperties": []
 			}
 		],
 		"annotations": []
