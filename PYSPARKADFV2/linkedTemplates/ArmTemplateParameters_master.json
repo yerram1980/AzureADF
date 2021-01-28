@@ -1,0 +1,87 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "PYSPARKADFV2"
+		},
+		"ADLS_GEN1_LS_servicePrincipalKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorageGen2_LS_accountKey": {
+			"value": ""
+		},
+		"AzureDatabricks_LS_accessToken": {
+			"value": ""
+		},
+		"BLOB_STORAGE_GEN2_LS_connectionString": {
+			"value": ""
+		},
+		"LS_ABLS_TARGET_connectionString": {
+			"value": ""
+		},
+		"LS_ABLS_practice1_accountKey": {
+			"value": ""
+		},
+		"LS_ADLS_SRC_servicePrincipalKey": {
+			"value": ""
+		},
+		"LS_ORCL_ON_PREM_SRC_connectionString": {
+			"value": ""
+		},
+		"Metadata_SQLDB_LS_connectionString": {
+			"value": ""
+		},
+		"ADLS_GEN1_LS_properties_typeProperties_dataLakeStoreUri": {
+			"value": "https://databricksadlsgen1.azuredatalakestore.net/webhdfs/v1"
+		},
+		"ADLS_GEN1_LS_properties_typeProperties_servicePrincipalId": {
+			"value": "9768d5c8-5df2-4125-818b-37b0d3472218"
+		},
+		"ADLS_GEN1_LS_properties_typeProperties_tenant": {
+			"value": "b38c808f-390b-4056-9a18-d5a9b571cf98"
+		},
+		"ADLS_GEN1_LS_properties_typeProperties_subscriptionId": {
+			"value": "532945f0-7bb0-4f10-b851-9de86e121ae7"
+		},
+		"ADLS_GEN1_LS_properties_typeProperties_resourceGroupName": {
+			"value": "dev_rg"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://pysparkstorageblob.dfs.core.windows.net"
+		},
+		"AzureDataLakeStorageGen2_LS_properties_typeProperties_url": {
+			"value": "https://pysparkstorageblob.dfs.core.windows.net"
+		},
+		"LS_ABLS_practice1_properties_typeProperties_url": {
+			"value": "https://pysparkstorageblob.dfs.core.windows.net"
+		},
+		"LS_ADLS_SRC_properties_typeProperties_dataLakeStoreUri": {
+			"value": "https://databricksadlsgen1.azuredatalakestore.net/webhdfs/v1"
+		},
+		"LS_ADLS_SRC_properties_typeProperties_servicePrincipalId": {
+			"value": "9768d5c8-5df2-4125-818b-37b0d3472218"
+		},
+		"LS_ADLS_SRC_properties_typeProperties_tenant": {
+			"value": "b38c808f-390b-4056-9a18-d5a9b571cf98"
+		},
+		"LS_ADLS_SRC_properties_typeProperties_subscriptionId": {
+			"value": "532945f0-7bb0-4f10-b851-9de86e121ae7"
+		},
+		"LS_ADLS_SRC_properties_typeProperties_resourceGroupName": {
+			"value": "dev_rg"
+		},
+		"LS_DEV_keyvault_properties_typeProperties_baseUrl": {
+			"value": "https://pyspark-dev-kv.vault.azure.net/"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}

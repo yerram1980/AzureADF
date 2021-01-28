@@ -1,0 +1,270 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "PYSPARKADFV2"
+		},
+		"ADLS_GEN1_LS_servicePrincipalKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'servicePrincipalKey' of 'ADLS_GEN1_LS'"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
+		},
+		"AzureDataLakeStorageGen2_LS_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorageGen2_LS'"
+		},
+		"AzureDatabricks_LS_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'AzureDatabricks_LS'"
+		},
+		"BLOB_STORAGE_GEN2_LS_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'BLOB_STORAGE_GEN2_LS'"
+		},
+		"LS_ABLS_TARGET_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_ABLS_TARGET'"
+		},
+		"LS_ABLS_practice1_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_ABLS_practice1'"
+		},
+		"LS_ADLS_SRC_servicePrincipalKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'servicePrincipalKey' of 'LS_ADLS_SRC'"
+		},
+		"LS_ORCL_ON_PREM_SRC_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_ORCL_ON_PREM_SRC'"
+		},
+		"Metadata_SQLDB_LS_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Metadata_SQLDB_LS'"
+		},
+		"ADLS_GEN1_LS_properties_typeProperties_dataLakeStoreUri": {
+			"type": "string",
+			"defaultValue": "https://databricksadlsgen1.azuredatalakestore.net/webhdfs/v1"
+		},
+		"ADLS_GEN1_LS_properties_typeProperties_servicePrincipalId": {
+			"type": "string",
+			"defaultValue": "9768d5c8-5df2-4125-818b-37b0d3472218"
+		},
+		"ADLS_GEN1_LS_properties_typeProperties_tenant": {
+			"type": "string",
+			"defaultValue": "b38c808f-390b-4056-9a18-d5a9b571cf98"
+		},
+		"ADLS_GEN1_LS_properties_typeProperties_subscriptionId": {
+			"type": "string",
+			"defaultValue": "532945f0-7bb0-4f10-b851-9de86e121ae7"
+		},
+		"ADLS_GEN1_LS_properties_typeProperties_resourceGroupName": {
+			"type": "string",
+			"defaultValue": "dev_rg"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://pysparkstorageblob.dfs.core.windows.net"
+		},
+		"AzureDataLakeStorageGen2_LS_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://pysparkstorageblob.dfs.core.windows.net"
+		},
+		"LS_ABLS_practice1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://pysparkstorageblob.dfs.core.windows.net"
+		},
+		"LS_ADLS_SRC_properties_typeProperties_dataLakeStoreUri": {
+			"type": "string",
+			"defaultValue": "https://databricksadlsgen1.azuredatalakestore.net/webhdfs/v1"
+		},
+		"LS_ADLS_SRC_properties_typeProperties_servicePrincipalId": {
+			"type": "string",
+			"defaultValue": "9768d5c8-5df2-4125-818b-37b0d3472218"
+		},
+		"LS_ADLS_SRC_properties_typeProperties_tenant": {
+			"type": "string",
+			"defaultValue": "b38c808f-390b-4056-9a18-d5a9b571cf98"
+		},
+		"LS_ADLS_SRC_properties_typeProperties_subscriptionId": {
+			"type": "string",
+			"defaultValue": "532945f0-7bb0-4f10-b851-9de86e121ae7"
+		},
+		"LS_ADLS_SRC_properties_typeProperties_resourceGroupName": {
+			"type": "string",
+			"defaultValue": "dev_rg"
+		},
+		"LS_DEV_keyvault_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://pyspark-dev-kv.vault.azure.net/"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "PYSPARKADFV2_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"ADLS_GEN1_LS_servicePrincipalKey": {
+						"value": "[parameters('ADLS_GEN1_LS_servicePrincipalKey')]"
+					},
+					"AzureDataLakeStorageGen2_LS_accountKey": {
+						"value": "[parameters('AzureDataLakeStorageGen2_LS_accountKey')]"
+					},
+					"AzureDatabricks_LS_accessToken": {
+						"value": "[parameters('AzureDatabricks_LS_accessToken')]"
+					},
+					"BLOB_STORAGE_GEN2_LS_connectionString": {
+						"value": "[parameters('BLOB_STORAGE_GEN2_LS_connectionString')]"
+					},
+					"LS_ABLS_TARGET_connectionString": {
+						"value": "[parameters('LS_ABLS_TARGET_connectionString')]"
+					},
+					"LS_ABLS_practice1_accountKey": {
+						"value": "[parameters('LS_ABLS_practice1_accountKey')]"
+					},
+					"LS_ADLS_SRC_servicePrincipalKey": {
+						"value": "[parameters('LS_ADLS_SRC_servicePrincipalKey')]"
+					},
+					"Metadata_SQLDB_LS_connectionString": {
+						"value": "[parameters('Metadata_SQLDB_LS_connectionString')]"
+					},
+					"ADLS_GEN1_LS_properties_typeProperties_dataLakeStoreUri": {
+						"value": "[parameters('ADLS_GEN1_LS_properties_typeProperties_dataLakeStoreUri')]"
+					},
+					"ADLS_GEN1_LS_properties_typeProperties_servicePrincipalId": {
+						"value": "[parameters('ADLS_GEN1_LS_properties_typeProperties_servicePrincipalId')]"
+					},
+					"ADLS_GEN1_LS_properties_typeProperties_tenant": {
+						"value": "[parameters('ADLS_GEN1_LS_properties_typeProperties_tenant')]"
+					},
+					"ADLS_GEN1_LS_properties_typeProperties_subscriptionId": {
+						"value": "[parameters('ADLS_GEN1_LS_properties_typeProperties_subscriptionId')]"
+					},
+					"ADLS_GEN1_LS_properties_typeProperties_resourceGroupName": {
+						"value": "[parameters('ADLS_GEN1_LS_properties_typeProperties_resourceGroupName')]"
+					},
+					"AzureDataLakeStorageGen2_LS_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorageGen2_LS_properties_typeProperties_url')]"
+					},
+					"LS_ABLS_practice1_properties_typeProperties_url": {
+						"value": "[parameters('LS_ABLS_practice1_properties_typeProperties_url')]"
+					},
+					"LS_ADLS_SRC_properties_typeProperties_dataLakeStoreUri": {
+						"value": "[parameters('LS_ADLS_SRC_properties_typeProperties_dataLakeStoreUri')]"
+					},
+					"LS_ADLS_SRC_properties_typeProperties_servicePrincipalId": {
+						"value": "[parameters('LS_ADLS_SRC_properties_typeProperties_servicePrincipalId')]"
+					},
+					"LS_ADLS_SRC_properties_typeProperties_tenant": {
+						"value": "[parameters('LS_ADLS_SRC_properties_typeProperties_tenant')]"
+					},
+					"LS_ADLS_SRC_properties_typeProperties_subscriptionId": {
+						"value": "[parameters('LS_ADLS_SRC_properties_typeProperties_subscriptionId')]"
+					},
+					"LS_ADLS_SRC_properties_typeProperties_resourceGroupName": {
+						"value": "[parameters('LS_ADLS_SRC_properties_typeProperties_resourceGroupName')]"
+					},
+					"LS_DEV_keyvault_properties_typeProperties_baseUrl": {
+						"value": "[parameters('LS_DEV_keyvault_properties_typeProperties_baseUrl')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "PYSPARKADFV2_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureDataLakeStorage1_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
+					},
+					"LS_ORCL_ON_PREM_SRC_connectionString": {
+						"value": "[parameters('LS_ORCL_ON_PREM_SRC_connectionString')]"
+					},
+					"AzureDataLakeStorage1_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'PYSPARKADFV2_ArmTemplate_0')]"
+			]
+		},
+		{
+			"name": "PYSPARKADFV2_ArmTemplate_2",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_2.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'PYSPARKADFV2_ArmTemplate_1')]"
+			]
+		},
+		{
+			"name": "PYSPARKADFV2_ArmTemplate_3",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_3.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'PYSPARKADFV2_ArmTemplate_2')]"
+			]
+		}
+	]
+}
