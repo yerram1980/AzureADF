@@ -1,0 +1,37 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "trainingazureadfv2"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/ADLS_GEN1_LS')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureDataLakeStore",
+				"typeProperties": {
+					"dataLakeStoreUri": "https://pysparkadlsgen.azuredatalakestore.net/webhdfs/v1",
+					"servicePrincipalId": "270a7daf-b949-440a-a3a4-cf378861a5b0",
+					"servicePrincipalKey": {
+						"type": "SecureString",
+						"value": "**********"
+					},
+					"tenant": "d16bbdb7-3f93-4c84-ba01-82c59277ae9e",
+					"subscriptionId": "b2db675a-4ae9-4a77-a21d-c2b56dea54cd",
+					"resourceGroupName": "dev_rg"
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
