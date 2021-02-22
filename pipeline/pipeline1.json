@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Aggregate",
+				"name": "Data flow1",
 				"type": "ExecuteDataFlow",
 				"dependsOn": [],
 				"policy": {
@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataflow": {
-						"referenceName": "Aggregate",
+						"referenceName": "dataflow1",
 						"type": "DataFlowReference"
 					},
 					"compute": {
@@ -27,6 +27,8 @@
 				}
 			}
 		],
-		"annotations": []
-	}
+		"annotations": [],
+		"lastPublishTime": "2021-02-21T13:12:54Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
 }
