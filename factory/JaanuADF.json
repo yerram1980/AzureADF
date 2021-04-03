@@ -1,0 +1,9 @@
+{
+	"name": "JaanuADF",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "74f9445f-b00e-4382-9ab2-a56413351699",
+		"tenantId": "c7f980d4-e519-4f8c-8781-1e62f47f2b0a"
+	}
+}
