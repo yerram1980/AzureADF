@@ -1,0 +1,141 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "JaanuADF"
+		},
+		"ADLS_GEN1_LS_servicePrincipalKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorageGen2_LS_accountKey": {
+			"value": ""
+		},
+		"AzureDatabricks_LS_accessToken": {
+			"value": ""
+		},
+		"BLOB_STORAGE_GEN2_LS_connectionString": {
+			"value": ""
+		},
+		"LS_ABLB_HIVEDB_connectionString": {
+			"value": ""
+		},
+		"LS_ABLS_GEN2_TGT_FILE_accountKey": {
+			"value": ""
+		},
+		"LS_ABLS_TARGET_connectionString": {
+			"value": ""
+		},
+		"LS_ABLS_practice1_accountKey": {
+			"value": ""
+		},
+		"LS_ADLS_GEN1_SRC_servicePrincipalKey": {
+			"value": ""
+		},
+		"LS_ADLS_SRC_servicePrincipalKey": {
+			"value": ""
+		},
+		"LS_AzureBlob_Gen2_Tgt_File_accountKey": {
+			"value": ""
+		},
+		"LS_ONPREM_FILESYSTEM_SRC_password": {
+			"value": ""
+		},
+		"LS_ONPREM_FILE_SRC_password": {
+			"value": ""
+		},
+		"LS_ORCL_ON_PREM_SRC_connectionString": {
+			"value": ""
+		},
+		"LS_ORCL_SRC_DB_connectionString": {
+			"value": ""
+		},
+		"Metadata_SQLDB_LS_connectionString": {
+			"value": ""
+		},
+		"ADLS_GEN1_LS_properties_typeProperties_dataLakeStoreUri": {
+			"value": "https://databricksadlsgen1.azuredatalakestore.net/webhdfs/v1"
+		},
+		"ADLS_GEN1_LS_properties_typeProperties_servicePrincipalId": {
+			"value": "9768d5c8-5df2-4125-818b-37b0d3472218"
+		},
+		"ADLS_GEN1_LS_properties_typeProperties_tenant": {
+			"value": "b38c808f-390b-4056-9a18-d5a9b571cf98"
+		},
+		"ADLS_GEN1_LS_properties_typeProperties_subscriptionId": {
+			"value": "532945f0-7bb0-4f10-b851-9de86e121ae7"
+		},
+		"ADLS_GEN1_LS_properties_typeProperties_resourceGroupName": {
+			"value": "dev_rg"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://pysparkstorageblob.dfs.core.windows.net"
+		},
+		"AzureDataLakeStorageGen2_LS_properties_typeProperties_url": {
+			"value": "https://pysparkstorageblob.dfs.core.windows.net"
+		},
+		"LS_ABLS_GEN2_TGT_FILE_properties_typeProperties_url": {
+			"value": "https://datalakegen2pyspark.dfs.core.windows.net"
+		},
+		"LS_ABLS_practice1_properties_typeProperties_url": {
+			"value": "https://pysparkstorageblob.dfs.core.windows.net"
+		},
+		"LS_ADLS_GEN1_SRC_properties_typeProperties_dataLakeStoreUri": {
+			"value": "https://pysparkadlsgen.azuredatalakestore.net/webhdfs/v1"
+		},
+		"LS_ADLS_GEN1_SRC_properties_typeProperties_servicePrincipalId": {
+			"value": "270a7daf-b949-440a-a3a4-cf378861a5b0"
+		},
+		"LS_ADLS_GEN1_SRC_properties_typeProperties_tenant": {
+			"value": "d16bbdb7-3f93-4c84-ba01-82c59277ae9e"
+		},
+		"LS_ADLS_GEN1_SRC_properties_typeProperties_subscriptionId": {
+			"value": "b2db675a-4ae9-4a77-a21d-c2b56dea54cd"
+		},
+		"LS_ADLS_GEN1_SRC_properties_typeProperties_resourceGroupName": {
+			"value": "dev_rg"
+		},
+		"LS_ADLS_SRC_properties_typeProperties_dataLakeStoreUri": {
+			"value": "https://databricksadlsgen1.azuredatalakestore.net/webhdfs/v1"
+		},
+		"LS_ADLS_SRC_properties_typeProperties_servicePrincipalId": {
+			"value": "9768d5c8-5df2-4125-818b-37b0d3472218"
+		},
+		"LS_ADLS_SRC_properties_typeProperties_tenant": {
+			"value": "b38c808f-390b-4056-9a18-d5a9b571cf98"
+		},
+		"LS_ADLS_SRC_properties_typeProperties_subscriptionId": {
+			"value": "532945f0-7bb0-4f10-b851-9de86e121ae7"
+		},
+		"LS_ADLS_SRC_properties_typeProperties_resourceGroupName": {
+			"value": "dev_rg"
+		},
+		"LS_AzureBlob_Gen2_Tgt_File_properties_typeProperties_url": {
+			"value": "https://jaanusa1.dfs.core.windows.net"
+		},
+		"LS_DEV_keyvault_properties_typeProperties_baseUrl": {
+			"value": "https://pyspark-dev-kv.vault.azure.net/"
+		},
+		"LS_ONPREM_FILESYSTEM_SRC_properties_typeProperties_host": {
+			"value": "E:\\files\\Data_Files\\onprem_data"
+		},
+		"LS_ONPREM_FILESYSTEM_SRC_properties_typeProperties_userId": {
+			"value": "raveendra"
+		},
+		"LS_ONPREM_FILE_SRC_properties_typeProperties_host": {
+			"value": "E:\\files\\Data_Files\\onprem_data"
+		},
+		"LS_ONPREM_FILE_SRC_properties_typeProperties_userId": {
+			"value": "raveendra"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
